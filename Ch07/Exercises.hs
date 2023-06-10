@@ -6,8 +6,8 @@ Exercise: Using the functions you just learned about, implement a function that
 counts the number of words in a text.
 |-}
 
-wordCount :: _
-wordCount = _
+wordCount :: String -> Int
+wordCount = length . words
 
 {-|
 Exercise: Using Data.Map and Data.Set, implement a function that converts a Map

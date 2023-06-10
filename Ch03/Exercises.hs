@@ -1,6 +1,8 @@
 -- Chapter 03: Types and Typeclasses
 module Exercises where
 
+import Prelude
+
 {-|
 Exercise: Fill the gaps (underscores), so that the file will typecheck. Your IDE
 should yell at you if it doesn't. You can also check your answers against the
@@ -10,24 +12,24 @@ type GHC inferred for the same expression using the eval field below.
 -- >>> :t _
 
 a :: [Bool]
-a = _
+a = [True]
 
 b :: (Bool, Bool)
-b = _
+b = (True, False)
 
-c :: _
+c :: [Int]
 c = [1, 2, 3]
 
 d :: Int -> Int
-d _ = _
+d a = a + a
 
-e :: _
+e :: Int -> Int -> Int
 e x y = x + y
 
-f :: _
+f :: [Int] -> Int
 f = head [1, 2]
 
-g :: _
+g :: ([a] -> a, (a, b) -> a)
 g = (head, fst)
 
 
@@ -44,7 +46,7 @@ i :: Bounded a => (a, a)
 i = _
 
 j :: Num a => a -> a
-j _ = _
+j i = i + 1
 
 k :: (Num b, Integral a) => a -> a -> b
-k _ _ = _
+k a0 a1 = (fromIntegral a0) + (fromIntegral a1)

@@ -16,31 +16,31 @@ Exercise: Implement the following two functions using:
 -- and False False -> False
 
 andPat :: Bool -> Bool -> Bool
-andPat _ _  = _
-andPat _ _  = _
+andPat True True = True
+andPat _ _  = False
 
 andGuard :: Bool -> Bool -> Bool
-andGuard _ _ | _ = _
-             | _ = _
+andGuard a b | a == b && a == True = True
+             | otherwise = False
 
 andCase :: Bool -> Bool -> Bool
-andCase _ _ = case _ of
-  _
-  _
+andCase a b = case (a, b) of
+  (True, True) -> True
+  _ -> False
 
 -- The functions 'pickIf*' should evaluate to the following:
 -- pickIf True (x, y) -> x
 -- pickIf False (x, y) -> y
 
 pickIfPat :: Bool -> (a, a) -> a
-pickIfPat _ _ = _
-pickIfPat _ _ = _
+pickIfPat True (a, b) = a
+pickIfPat False (a, b) = b
 
 pickIfGuard :: Bool -> (a, a) -> a
-pickIfGuard _ _ | _ = _
-                | _ = _
+pickIfGuard b t | b == True = fst t
+                | otherwise = snd t
 
 pickIfCase :: Bool -> (a, a) -> a
-pickIfCase _ _ = case _ of
-  _
-  _
+pickIfCase b t = case b of
+  True -> fst t
+  False -> snd t
