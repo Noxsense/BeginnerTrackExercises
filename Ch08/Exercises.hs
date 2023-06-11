@@ -1,3 +1,4 @@
+{-# LANGUAGE InstanceSigs #-}
 -- Chapter 08: Making Our Own Types and Typeclasses
 module Exercises where
 
@@ -8,7 +9,6 @@ one for the successor of a number.
 |-}
 
 data Nat = Zero | Succ Nat
-  deriving ( Show )
 
 {-|
 Exercise: Define 'plus', which acts recursively on two natural numbers and
